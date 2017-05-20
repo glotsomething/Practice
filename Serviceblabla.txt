@@ -1,0 +1,57 @@
+package com.example.minji.serviceexample;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    private int mCurNum = 0;
+    private Thread mCountThread = null;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void onClick(View v){
+        switch(v.getId()){
+            //1. 카운트 시작
+            case R.id.start_count_btn:{
+                if(mCountThread ==null){
+                    mCountThread = new Thread("Count Thread"){
+                        public void run(){
+                            while(mCurNum <=10000){
+                                mCurNum ++; try{Thread.sleep(1000);}
+                                catch(InterruptedException e) { break;};
+                        }
+                    }
+                };
+
+                mCountThread.start();
+
+                }
+                break;
+
+            }
+
+            //2. 카운트 종료
+            case R.id.stop_count_btn:{
+                    if(mCountThread != null){
+                        mCountThread.interrupt();
+                        mCountThread = null;
+                        mCurNum = 0;
+                    }
+                break;
+                }
+
+                //3. 현재까ㅓ지 카운트 된 수치 보기
+
+            case R.id.show_cur_number_btn:
+                {
+                    Toast.makeText(this,"Current Number : "+ mCurNum, Toast.LENGTH_LONG ).show();
+                    break;
+                }
+        }
+    }
+}
