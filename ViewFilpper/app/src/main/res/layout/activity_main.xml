@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.minji.viewfilpper.MainActivity">
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="367dp"
+        android:layout_height="500dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="previous" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="next" />
+    </LinearLayout>
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="367dp"
+        android:layout_height="500dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+    <Textview
+        android:layout_width = "367dp"
+        android:layout_height="0dp"
+        android:background="#ff0000"
+        android:text="RED"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+       android:background="#00ff00"
+        android:text="green"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0000ff"
+        android:text="blue"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+</ViewFlipper>
+</android.support.constraint.ConstraintLayout>
