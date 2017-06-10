@@ -1,5 +1,6 @@
 package com.bus.computer.lutfen;
 
+import android.app.TabActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
+        출처: http://androidhuman.com/151 [커니의 안드로이드 이야기]
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -124,7 +130,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }/**
+ 이거는..... NoticeFragment 에 TabView를 사용하려고 하다 보니 이지경까지... 아마 이것만 해서는 안될거 같은데....
+    public class TabViewControlor extends TabActivity {
+        private TabHost mTabHost;
+
+        @Override
+        public  TabViewControlor(TabHost tb){
+            mTabHost = getTabHost();
+            mTabHost.addTab(mTabHost.newTabSpec("tab1").setContent(R.id.tab1).setIndicator("Tab1"));
+            mTabHost.addTab(mTabHost.newTabSpec("tab2").setContent(R.id.tab2).setIndicator("Tab2"));
+            mTabHost.addTab(mTabHost.newTabSpec("tab3").setContent(R.id.tab3).setIndicator("Tab33"));
+        }
     }
+        **/
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
