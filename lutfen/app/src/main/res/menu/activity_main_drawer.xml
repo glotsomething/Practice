@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_calender"
+            android:icon="@drawable/ic_calendar"
+            android:title="캘린더" />
+        <item
+            android:id="@+id/nav_servey"
+            android:icon="@drawable/ic_servey"
+            android:title="설문조사" />
+        <item
+            android:id="@+id/nav_information"
+            android:icon="@drawable/ic_information"
+            android:title="통합정보시스템" />
+        <item
+            android:id="@+id/nav_mealmenu"
+            android:icon="@drawable/ic_meal"
+            android:title="식단" />
+        <item
+            android:id="@+id/nav_sideedu"
+            android:icon="@drawable/ic_sideedu"
+            android:title="비교과관리" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_notice"
+                android:icon="@drawable/ic_notice"
+                android:title="공지사항" />
+            <item
+                android:id="@+id/nav_board"
+                android:icon="@drawable/ic_board"
+                android:title="알림함" />
+        </menu>
+    </item>
+
+</menu>
